@@ -35,12 +35,12 @@ function App() {
 />
 
 <Route
-  path="/product/:id"
+  path="/Product/:id"
   element={<ProductDetails opensidebar={opensidebar} setopensidebar={setopensidebar} />}
 />
 
 <Route
-  path="/checkout"
+  path="/Checkout"
   element={<Checkout opensidebar={opensidebar} setopensidebar={setopensidebar}  />}
 />
     </Routes>
