@@ -10,7 +10,7 @@ import { CartProvider } from './components/cartcontext.jsx';
 createRoot(document.getElementById('root')).render(
    <StrictMode>
     <CartProvider>
-    <BrowserRouter>
+    <BrowserRouter basename="/react-ecom">
       <App />
     </BrowserRouter>
     </CartProvider>
