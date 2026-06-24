@@ -1,6 +1,6 @@
 import { useState } from "react"
-
-
+import CartContext from "../components/cartcontext";
+import { useContext } from "react";
 
 function Checkout({opensidebar}) {
 
@@ -14,11 +14,17 @@ function Checkout({opensidebar}) {
 
 
   const handlesubmit = (e) => {
-    e.preventDefalut();
+    e.preventDefault();
   }
+
+  const {
+        cart,
+       totalPrice,
+} = useContext(CartContext);
+
   return (
    <section className={`${opensidebar? "ml-[300px]" : "ml-[60px]"} pt-20 min-h-screen`}>
-    <div className="p-4 m-4 border-1 rounded-xl  items-center w-full">
+    <div className="p-4 m-4 border-1 rounded-xl ">
       <div className="flex flex-col">
         <h3 className="font-bold mb-2 text-2xl">Creat order</h3>
         <p>plz fill the form to create order</p>
@@ -48,6 +54,22 @@ function Checkout({opensidebar}) {
           <button className="px-4 py-2 rounded-xl text-white border bg-red-700 cursor-pointer" type="submit">order</button>
         </div>
       </form>
+      <div className="pt-10 gap-4 flex flex-col">
+      {cart.map(item => (
+        <div className="flex gap-4 items-center border rounded-xl w-fit p-4" key={item.id}>
+          <div className="w-[300px] h-[200px]">
+            <img src={item.img} alt="cart img" className="w-[100%] h-full object-contain"/>
+            </div>
+            <div className="flex flex-col gap-2">
+              <h2 className="text-2xl ">{item.name}</h2>
+              <div className="flex gap-4">
+              <p className="font-bold text-xl">price :${item.price}</p>
+              <p className="font-bold text-xl text-red-400">total price :${totalPrice}</p>
+              </div>
+              </div>
+        </div>
+      ))}
+      </div>
     </div>
    </section>
   )
