@@ -40,7 +40,7 @@ const filteredProducts = products.filter((product) =>
                 placeholder="Search..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className=" p-1 w-[400px] bg-white rounded-xl max-md:w-[200px] max-sm:w-[100px]"
+                className=" p-1 w-[300px]  bg-white rounded-xl max-md:w-[200px] max-sm:w-[120px]"
             />
 
             {search && (
