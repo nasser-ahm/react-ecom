@@ -66,6 +66,7 @@ export function CartProvider({ children }) {
         decreaseQuantity,
         deleteItem,
         totalPrice,
+        
       }}
     >
       {children}

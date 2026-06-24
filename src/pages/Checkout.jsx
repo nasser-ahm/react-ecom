@@ -20,6 +20,9 @@ function Checkout({opensidebar}) {
   const {
         cart,
        totalPrice,
+       increaseQuantity,
+        decreaseQuantity,
+        deleteItem,
 } = useContext(CartContext);
 
   return (
@@ -50,8 +53,9 @@ function Checkout({opensidebar}) {
         <label htmlFor="Address">Address :</label>
         <textarea value={form.address} required onChange={(e) => setform({...form , address: e.target.value})} type="text" placeholder="enter your address" className="border rounded-s px-2 py-2 mb-2 w-full"/>
         </div>
-        <div className="flex justify-end w-full pt-10">
-          <button className="px-4 py-2 rounded-xl text-white border bg-red-700 cursor-pointer" type="submit">order</button>
+        <div className="flex justify-end w-full pt-10 items-center gap-2">
+          <button className="px-4 py-2 rounded-xl text-white border bg-red-700 cursor-pointer font-bold hover:bg-red-500 transition-all duration-300" type="submit">order</button>
+          <p className="font-bold text-xl text-red-400">total price :${totalPrice}</p>
         </div>
       </form>
       <div className="pt-10 gap-4 flex flex-col">
@@ -63,8 +67,13 @@ function Checkout({opensidebar}) {
             <div className="flex flex-col gap-2">
               <h2 className="text-2xl ">{item.name}</h2>
               <div className="flex gap-4">
-              <p className="font-bold text-xl">price :${item.price}</p>
-              <p className="font-bold text-xl text-red-400">total price :${totalPrice}</p>
+              <p className="font-bold text-xl">price :${item.price * item.quantity}</p>
+              </div>
+               <div className="flex gap-2 items-center justify-center text-2xl">
+                <button className=" px-2 py-1 hover:bg-gray-100 cursor-pointer" onClick={() => {decreaseQuantity(item.id)}}>-</button>
+                <span>{item.quantity}</span>
+                <button className=" px-2 py-1 hover:bg-gray-100 cursor-pointer" onClick={() => {increaseQuantity(item.id)}}>+</button>
+                <button className=" bg-red-700 text-white px-2 py-1 rounded-md hover:bg-red-600 transition cursor-pointer text-sm" onClick={() => {deleteItem(item.id)}}>x</button>
               </div>
               </div>
         </div>
