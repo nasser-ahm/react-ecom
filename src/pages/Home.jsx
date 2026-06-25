@@ -31,7 +31,7 @@ function Home({opensidebar, setopensidebar}) {
    {/*side bar */}
    <Sidebar links={menulinks} osb={opensidebar} hcf={handleClosefunction}/>
    {/*content */}
-   <div className={`content min-h-screen transition-all duration-300 ease-in-out ${opensidebar ? "ml-[300px]" : "ml-[60px]"}  bg-white relative `}>
+   <div className={`content min-h-screen transition-all duration-300 ease-in-out ${opensidebar ? "md:ml-[300px]" : "md:ml-[0px]"} bg-white relative `}>
     <div className="h-[600px] ">
      <Swiper 
       className="h-full"

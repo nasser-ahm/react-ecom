@@ -30,7 +30,7 @@ function App() {
 />
 
 <Route
-  path="/products"
+  path="/Products"
   element={<Products opensidebar={opensidebar} setopensidebar={setopensidebar}  />}
 />
 

@@ -26,7 +26,7 @@ function Checkout({opensidebar}) {
 } = useContext(CartContext);
 
   return (
-   <section className={`${opensidebar? "ml-[300px]" : "ml-[60px]"} pt-20 min-h-screen`}>
+   <section className={`${opensidebar? "md:ml-[300px]" : "md:ml-[60px]"} pt-20 min-h-screen transition-all duration-300`}>
     <div className="p-4 m-4 border-1 rounded-xl ">
       <div className="flex flex-col">
         <h3 className="font-bold mb-2 text-2xl">Creat order</h3>
@@ -58,9 +58,9 @@ function Checkout({opensidebar}) {
           <p className="font-bold text-xl text-red-400">total price :${totalPrice}</p>
         </div>
       </form>
-      <div className="pt-10 gap-4 flex flex-col">
+      <div className="pt-10 gap-4 flex flex-col max-lg:items-center">
       {cart.map(item => (
-        <div className="flex gap-4 items-center border rounded-xl w-fit p-4" key={item.id}>
+        <div className="flex gap-4 items-center  w-[600px] max-md:w-[400px] p-4 max-lg:flex-col" key={item.id}>
           <div className="w-[300px] h-[200px]">
             <img src={item.img} alt="cart img" className="w-[100%] h-full object-contain"/>
             </div>

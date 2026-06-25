@@ -2,7 +2,7 @@ import Container from "./Container"
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 export default function Footer({ opensidebar}) {
   return (
-   <footer className={` border-t-2 py-20 transition-all duration-300 bg-red-200 ${opensidebar ? "ml-[300px]" : "ml-[60px]"} `}>
+   <footer className={` border-t-2 py-20 transition-all duration-300 bg-red-200 ${opensidebar ? "md:ml-[300px]" : "md:ml-[0px]"} `}>
     <Container>
         <div className="grid  md:grid-cols-2 lg:grid-cols-3 justify-center gap-10 ">
             <div className="flex gap-4 flex-col">

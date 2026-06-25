@@ -25,7 +25,7 @@ export default function ProductDetails({opensidebar}) {
    
   return (
     <>
-      <section className={`pt-[60px]  flex   min-h-screen flex-col  ${opensidebar? "ml-[300px]" : "ml-[60px]"} transition-all duration-300`}>
+      <section className={`pt-[60px]  flex   min-h-screen flex-col  ${opensidebar? "md:ml-[300px]" : "md:ml-[0px]"} transition-all duration-300`}>
         <div className=" flex w-full items-center  justify-center flex-1 max-md:flex-col">
         <div className="w-[50%] md:w-1/2 justify-center flex">
           <img
